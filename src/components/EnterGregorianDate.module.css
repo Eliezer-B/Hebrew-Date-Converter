@@ -1,0 +1,9 @@
+.c_form {
+  display: flex;
+  justify-content: center;
+
+}
+.c_form_input{
+    display: grid;
+    justify-content: center;
+}
