@@ -6,20 +6,19 @@ import classes from "./EnterGregorianDate.module.css";
 
 const EnterGregorianDate = () => {
   const [enterDate, setEnterDate] = useState("");
-  const [showHebrewDate, setShowHebrewDat] = useState("");
+  const [showHebrewDate, setShowHebrewDate] = useState("");
 
   async function getHebrewDate(date) {
     const response = await fetch(
       `https://www.hebcal.com/converter?cfg=json&date=${date}&g2h=1&strict=1`
     );
     const jsonData = await response.json();
-    setShowHebrewDat(jsonData.hebrew);
+    setShowHebrewDate(jsonData.hebrew);
   }
 
   const converDatetHandler = (e) => {
     e.preventDefault();
     getHebrewDate(enterDate);
-    setEnterDate("");
   };
 
   const dateInputHandler = (e) => {
@@ -28,7 +27,7 @@ const EnterGregorianDate = () => {
 
   const resetData = () => {
     setEnterDate("");
-    setShowHebrewDat("");
+    setShowHebrewDate("");
   };
 
   return (
